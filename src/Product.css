@@ -14,8 +14,8 @@
 
 .product__rating {
   display: flex;
+  color: #ffb400;
 }
-
 .product > img {
   max-height: 200px;
   width: 100%;
