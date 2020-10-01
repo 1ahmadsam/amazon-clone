@@ -3,7 +3,13 @@ import './CheckoutProduct.css';
 
 import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
+import { useStateValue } from './StateProvider';
 const CheckoutProduct = ({ id, image, title, price, rating }) => {
+  const [{ cart }, dispatch] = useStateValue();
+  const removeFromCart = () => {
+    dispatch({ type: 'REMOVE_FROM_CART', id: id });
+  };
+
   return (
     <div className='checkoutProduct'>
       <img className='checkoutProduct__image' src={image} alt={title} />
@@ -20,7 +26,7 @@ const CheckoutProduct = ({ id, image, title, price, rating }) => {
               i + 1 <= rating ? <StarIcon /> : <StarBorderIcon />
             )}
         </div>
-        <button>Remove from Cart</button>
+        <button onClick={removeFromCart}>Remove from Cart</button>
       </div>
     </div>
   );
