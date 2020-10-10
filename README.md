@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Amazon Clone APP
+
+### Amazon clone build using ReactJS , Firebase User Authentication, Stripe Payment, Material UI, State Management with Context API, Firebase Hosting, NodeJS , Express & Firebase Functions
+
+### LIVE DEMO: https://clone-5e662.web.app/
+
+![Image of Amazon-clone](img/amazon-clone.jpg)
 
 ## Available Scripts
 
