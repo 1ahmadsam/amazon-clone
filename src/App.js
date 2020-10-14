@@ -16,12 +16,11 @@ const promise = loadStripe(
   'pk_test_51HXOZSCGNMAhcRfkf5xPEToAgvx9MWNhrcyRh9V4eYG9aGXRAd5cKvvmMTu3eZGZtEjJfIYDkx179518OafN2Df200Gg1LJp9V'
 );
 function App() {
-  const [{}, dispatch] = useStateValue();
+  const [{ cart }, dispatch] = useStateValue();
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         // the user just logged in / the user was logged in
-        console.log(authUser);
         dispatch({
           type: 'SET_USER',
           user: authUser,

@@ -30,3 +30,8 @@
   margin-top: 10px;
   color: #111;
 }
+.subtotal__signIn {
+  margin-top: 8px;
+  color: red;
+  text-transform: uppercase;
+}

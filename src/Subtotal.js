@@ -7,16 +7,13 @@ import { useHistory } from 'react-router-dom';
 
 const Subtotal = () => {
   const history = useHistory();
-  const [{ cart }, dispatch] = useStateValue();
-
-  const total = (a, b) => a + b;
+  const [{ user, cart }] = useStateValue();
   return (
     <div className='subtotal'>
       <CurrencyFormat
         renderText={(value) => (
           <>
             <p>
-              {/* Part of the homework */}
               Subtotal ({cart?.length} items): <strong>{value}</strong>
             </p>
             <small className='subtotal__gift'>
@@ -25,12 +22,15 @@ const Subtotal = () => {
           </>
         )}
         decimalScale={2}
-        value={getCartTotal(cart)} // Part of the homework
+        value={getCartTotal(cart)}
         displayType={'text'}
         thousandSeparator={true}
         prefix={'$'}
       />
-      <button onClick={(e) => history.push('/payment')}>
+      {user ? null : (
+        <h5 className='subtotal__signIn'>Please sign in, to checkout</h5>
+      )}
+      <button disabled={!user} onClick={(e) => history.push('/payment')}>
         Proceed to Checkout
       </button>
     </div>

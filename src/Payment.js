@@ -10,7 +10,7 @@ import axios from './axios';
 import { db } from './firebase';
 
 const Payment = () => {
-  const [{ cart, user }, dispatch] = useStateValue();
+  const [{ cart, user }] = useStateValue();
   const history = useHistory();
   const stripe = useStripe();
   const elements = useElements();
@@ -33,7 +33,6 @@ const Payment = () => {
     getClientSecret();
   }, [cart]);
 
-  console.log('THE SECRE IS', clientSecret);
   const handleSubmit = async (event) => {
     event.preventDefault();
     setProcessing(true);

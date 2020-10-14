@@ -11,7 +11,9 @@ const stripe = require('stripe')(
 const app = express();
 
 // Middlewares
-app.use(cors({ origin: true }));
+app.use(
+  cors({ origin: 'https://clone-5e662.web.app', optionsSuccessStatus: 200 })
+);
 app.use(express.json());
 
 // API routes
